@@ -1,0 +1,10 @@
+.app {
+  padding: 30px;
+  display: flex;
+  background-color: powderblue;
+  height: 100vh;
+}
+
+.app > div {
+  margin-right: 50px;
+}
