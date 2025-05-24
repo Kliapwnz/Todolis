@@ -16,7 +16,7 @@ export const TodolistItem = (props: Props) => {
          <ul>
             {props.tasks.map(task => {
                return (
-                  <li>
+                  <li key={task.id}>
                      <input type="checkbox" checked={task.isDone}/>
                      <span>{task.title}</span>
                   </li>
