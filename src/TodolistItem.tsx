@@ -1,6 +1,8 @@
+type PropsType = {
+   title:string
+}
 
-
-export const TodolistItem = (props:any) => {
+export const TodolistItem = (props:PropsType) => {
    return (
       <div>
          <h3>{props.title}</h3>
