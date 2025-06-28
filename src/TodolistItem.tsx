@@ -21,6 +21,7 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
             <Button title={"+"} onClick={() => {
                if (inputRef.current) {
                   createTask(inputRef.current.value)
+                  inputRef.current.value = ""
                }
             }}/>
          </div>
