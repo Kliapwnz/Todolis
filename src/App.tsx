@@ -42,6 +42,13 @@ export const App = () => {
       const newTasks = [newTask, ...tasks]
       setTasks(newTasks)
    }
+   let changeTaskStatus = (taskId: string, isDone: boolean) => {
+      const task = tasks.find(t=> t.id === taskId)
+      if(task){
+         task.isDone = isDone
+         setTasks([...tasks])
+      }
+   }
 
    return (
       <div className="app">
@@ -50,6 +57,7 @@ export const App = () => {
                        deleteTask={deleteTask}
                        changeFilter={changeFilter}
                        createTask={createTask}
+                       changeTaskStatus={changeTaskStatus}
          />
 
       </div>
