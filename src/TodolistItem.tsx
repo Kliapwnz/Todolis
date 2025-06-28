@@ -4,17 +4,18 @@ import {Button} from "./Button";
 type Props = {
    title: string
    tasks: Task[]
-   deleteTask: (taskId: number) => void
-   changeFilter: (filer:FilterValue) => void
+   deleteTask: (taskId: string) => void
+   changeFilter: (filer: FilterValue) => void
+   createTask: () => void
 }
 
-export const TodolistItem = ({title, tasks, deleteTask, changeFilter}: Props) => {
+export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask}: Props) => {
    return (
       <div>
          <h3>{title}</h3>
          <div>
             <input/>
-            <button>+</button>
+            <Button title={"+"} onClick={createTask}/>
          </div>
          {tasks.length === 0 ? (
             <p>Тасок нет</p>
@@ -33,9 +34,9 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter}: Props) =>
             </ul>
          )}
          <div>
-            <Button title={"All"} onClick={()=>changeFilter("all")}/>
-            <Button title={"Active"} onClick={()=>changeFilter("active")}/>
-            <Button title={"Completed"} onClick={()=>changeFilter("completed")}/>
+            <Button title={"All"} onClick={() => changeFilter("all")}/>
+            <Button title={"Active"} onClick={() => changeFilter("active")}/>
+            <Button title={"Completed"} onClick={() => changeFilter("completed")}/>
          </div>
       </div>
    );
